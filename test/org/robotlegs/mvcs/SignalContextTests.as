@@ -1,18 +1,19 @@
 package org.robotlegs.mvcs
 {
-	import flash.display.Sprite;
-	import flash.events.Event;
-    import asunit.asserts.*;
+    import flash.display.Sprite;
+    import flash.events.Event;
 
-import org.robotlegs.core.IInjector;
-import org.robotlegs.core.ISignalCommandMap;
+    import org.flexunit.asserts.assertEquals;
+    import org.flexunit.asserts.assertTrue;
+    import org.robotlegs.core.IInjector;
+    import org.robotlegs.core.ISignalCommandMap;
     import org.robotlegs.core.ISignalContext;
-import org.robotlegs.test.support.SignalContextWithAccessibleInjector;
-import org.robotlegs.test.support.SignalInjecteeTestClass;
-import org.robotlegs.test.support.TestCommandPropertySignal;
-import org.robotlegs.test.support.TestOnePropertyCommand;
+    import org.robotlegs.test.support.SignalContextWithAccessibleInjector;
+    import org.robotlegs.test.support.SignalInjecteeTestClass;
+    import org.robotlegs.test.support.TestCommandPropertySignal;
+    import org.robotlegs.test.support.TestOnePropertyCommand;
 
-public class SignalContextTests
+    public class SignalContextTests
     {
         private var signalContext:ISignalContext;
 

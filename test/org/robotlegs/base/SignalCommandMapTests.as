@@ -1,14 +1,15 @@
 package org.robotlegs.base
 {
-    import asunit.asserts.*;
-
     import mx.collections.ArrayCollection;
+
+    import org.flexunit.asserts.assertEquals;
+    import org.flexunit.asserts.assertFalse;
+    import org.flexunit.asserts.assertTrue;
     import org.osflash.signals.ISignal;
     import org.robotlegs.adapters.SwiftSuspendersInjector;
     import org.robotlegs.core.IInjector;
     import org.robotlegs.core.ISignalCommandMap;
     import org.robotlegs.test.support.*;
-    import org.robotlegs.test.support.TestXMLPropertySignal;
 
     public class SignalCommandMapTests
     {
@@ -135,9 +136,9 @@ package org.robotlegs.base
         public function signal_mapped_as_class_maps_signal_instance_with_injector():void
         {
             var signal:ISignal = signalCommandMap.mapSignalClass(TestCommandPropertySignal, TestNoPropertiesCommand);
-            var signalTwo:ISignal = injector.instantiate(SignalInjecteeTestClass).signal;
+            var signalTwo:ISignal = ISignal(injector.instantiate(SignalInjecteeTestClass).signal);
 
-            assertSame(signal, signalTwo);
+            assertEquals(signal,signalTwo);
         }
 
         [Test]
@@ -146,7 +147,7 @@ package org.robotlegs.base
             var signalOne:ISignal = signalCommandMap.mapSignalClass(TestCommandPropertySignal, TestNoPropertiesCommand);
             var signalTwo:ISignal = signalCommandMap.mapSignalClass(TestCommandPropertySignal, TestOnePropertyCommand);
 
-            assertSame(signalOne, signalTwo);
+            assertEquals(signalOne,signalTwo);
         }
 
         [Test]
